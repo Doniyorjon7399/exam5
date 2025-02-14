@@ -1,0 +1,55 @@
+<div class="w-75 mx-auto">
+  <p class="fs-1">add post</p>
+  {{#if addPostError}}
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+      <strong>Error!</strong>
+      {{addPostError}}.
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="alert"
+        aria-label="Close"
+      ></button>
+  {{/if}}
+  <form action="/posts/create" method="post">
+    <div class="input-group mb-3">
+      <div class="form-floating">
+        <input
+          type="text"
+          name="title"
+          class="form-control"
+          id="floatingInputGroup1"
+          placeholder="title"
+        />
+        <label for="floatingInputGroup1">title</label>
+      </div>
+    </div>
+
+    <div class="form-floating">
+      <textarea
+        class="form-control"
+        name="content"
+        placeholder="Leave a comment here"
+        id="floatingTextarea2"
+        style="height: 100px"
+      ></textarea>
+      <label for="floatingTextarea2">Content</label>
+    </div>
+    <div class="form-floating">
+      <select
+        class="form-select"
+        id="floatingSelect"
+        name="category"
+        aria-label="Floating label select example"
+      >
+
+        <option value="technology">Technology</option>
+        <option value="lifestyle">Lifestyle</option>
+        <option value="business">Business</option>
+      </select>
+      <label for="floatingSelect">category</label>
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-3">add</button>
+  </form>
+</div>
