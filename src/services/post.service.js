@@ -97,8 +97,8 @@ class postService {
     const posts = await this.postModel
       .find({
         $or: [
-          { title: { $regex: query, $options: "i" } }, // Title ichida qidirmoqda
-          { content: { $regex: query, $options: "i" } }, // Content ichida qidirmoqda
+          { title: { $regex: query, $options: "i" } },
+          { content: { $regex: query, $options: "i" } },
         ],
       })
       .populate("author");
